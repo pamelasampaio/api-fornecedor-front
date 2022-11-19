@@ -1,0 +1,33 @@
+<h1 *ngIf="!isChange" mat-dialog-title>Novo Fornecedor</h1>
+<h1 *ngIf="isChange" mat-dialog-title>Editar</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Id</mat-label>
+    <input matInput [(ngModel)]="data.id">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="data.nome">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>CNPJ</mat-label>
+    <input matInput [(ngModel)]="data.CNPJ">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Mercadoria</mat-label>
+    <input matInput [(ngModel)]="data.mercadoria">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Telefone</mat-label>
+    <input matInput [(ngModel)]="data.telefone">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="data.email">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button *ngIf="!isChange" [mat-dialog-close]="data" cdkFocusInitial>Criar</button>
+  <button mat-button *ngIf="isChange" [mat-dialog-close]="data" cdkFocusInitial>Editar</button>
+</div>
